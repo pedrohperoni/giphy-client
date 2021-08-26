@@ -1,4 +1,5 @@
 import { useState } from "react"
+import { Results } from "./Results";
 
 export function SearchForm(){
 
@@ -37,19 +38,10 @@ export function SearchForm(){
             <button type="submit" value="Search"/>
          </form>
          {data && (
-            <div>
-            <h2>Results</h2>
-            <ul>
-               {data.map(d => (
-                  <li key={d.id}>
-                     <img src={d.images.fixed_width.url} alt={d.title} />
-                  </li>
-               ))}
-            </ul>
-         </div>
+            <Results
+               data={data} 
+            />
          )}
-
-
       </div>
    )
 }
