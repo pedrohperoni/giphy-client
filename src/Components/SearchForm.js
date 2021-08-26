@@ -24,18 +24,19 @@ export function SearchForm(){
    }
 
    return(
-      <div>
+      <div className="searchForm">
+         <h1>Search</h1>
          <form onSubmit={e => {
             e.preventDefault();
             search()}}
          >
             <input 
                type="text" 
-               placeholder="Search GIFS" 
+               placeholder="Search anything..." 
                value={inputText} 
                onChange={e => setInputText(e.target.value)}
             />
-            <button type="submit" value="Search"/>
+            <button type="submit"/>
          </form>
          {data && (
             <Results
