@@ -1,5 +1,6 @@
 import { useState } from "react"
 import { Results } from "./Results";
+import "../styles/searchForm.css"
 
 export function SearchForm(){
 
@@ -13,7 +14,7 @@ export function SearchForm(){
       }
 
       fetch(
-         `https://api.giphy.com/v1/gifs/search?q=${inputText}&api_key=99WGUuUplMOd8XwtBn4ltbbNibV5mC1R`
+         `https://api.giphy.com/v1/gifs/search?q=${inputText}&limit=50&api_key=99WGUuUplMOd8XwtBn4ltbbNibV5mC1R`
       )
 
          .then(response => response.json())
@@ -25,23 +26,27 @@ export function SearchForm(){
 
    return(
       <div className="searchForm">
-         <h1>Search</h1>
-         <form onSubmit={e => {
-            e.preventDefault();
-            search()}}
-         >
-            <input 
-               type="text" 
-               placeholder="Search anything..." 
-               value={inputText} 
-               onChange={e => setInputText(e.target.value)}
-            />
-            <button type="submit"/>
-         </form>
+         <div className="searchContainer">
+            <h1>Search Gifs</h1>
+            <form onSubmit={e => {
+               e.preventDefault();
+               search()}}
+            >
+               <input 
+                  type="text" 
+                  placeholder="Search anything..." 
+                  value={inputText} 
+                  onChange={e => setInputText(e.target.value)}
+               />
+               <button type="submit"/>
+            </form>
+         </div>
          {data && (
-            <Results
-               data={data} 
-            />
+            <div className="gifsContainer">
+               <Results
+                  data={data} 
+               />
+            </div>
          )}
       </div>
    )

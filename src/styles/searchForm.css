@@ -1,0 +1,16 @@
+.searchForm{
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   flex-direction: column;
+}
+
+.searchContainer h1{
+   margin: 80px;
+   text-align: center;
+}
+
+.gifsContainer{
+   margin-top: 200px;
+   background-color:red;
+}
