@@ -6,11 +6,28 @@
 }
 
 .searchContainer h1{
-   margin: 80px;
+   margin: 50px;
    text-align: center;
+   color: #EEEEEE;
 }
 
 .gifsContainer{
-   margin-top: 200px;
-   background-color:red;
+   margin-top: 100px;
 }
+
+form{
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+input {
+		width: 80vw;
+		background: #EEEEEE;
+		color: #393E46;
+		font: inherit;
+		box-shadow: 0 6px 10px 0 rgba(0, 0, 0 , .1);
+		border: 0;
+		outline: 0;
+		padding: 22px 18px;
+	}
+

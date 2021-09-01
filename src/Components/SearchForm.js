@@ -1,11 +1,12 @@
 import { useState } from "react"
-import { Results } from "./Results";
+import { Gifs } from "./Gifs";
 import "../styles/searchForm.css"
 
 export function SearchForm(){
 
    const [inputText, setInputText] = useState("");
    const [data, setData] = useState(null);
+
 
    const search= () => {
       if(!inputText) {
@@ -27,7 +28,7 @@ export function SearchForm(){
    return(
       <div className="searchForm">
          <div className="searchContainer">
-            <h1>Search Gifs</h1>
+            <h1>Giphy Client</h1>
             <form onSubmit={e => {
                e.preventDefault();
                search()}}
@@ -38,12 +39,11 @@ export function SearchForm(){
                   value={inputText} 
                   onChange={e => setInputText(e.target.value)}
                />
-               <button type="submit"/>
             </form>
          </div>
          {data && (
             <div className="gifsContainer">
-               <Results
+               <Gifs
                   data={data} 
                />
             </div>

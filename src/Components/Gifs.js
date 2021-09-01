@@ -1,6 +1,6 @@
-import "../styles/results.css"
+import "../styles/gifs.css"
 
-export function Results(props){
+export function Gifs(props){
    return(
       <div className="results">
             {props.data.map(d => (
